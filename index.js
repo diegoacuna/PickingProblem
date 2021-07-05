@@ -4,6 +4,7 @@ var json3 = require("./json/scen3.json");
 var json4 = require("./json/scen4.json");
 
 
+
 function giveHead(arrayOfArticles){
     return arrayOfArticles.shift();
 }
