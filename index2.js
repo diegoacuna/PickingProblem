@@ -11,6 +11,8 @@ function giveHead(arrayOfArticles){
 
 function recommendations(jsonOfArticles){
 
+    let articlesCopied = JSON.parse(JSON.stringify(jsonOfArticles));
+
     let arrOfrecommendations = [];
 
     let haveElements = true;
@@ -23,9 +25,9 @@ function recommendations(jsonOfArticles){
         
         prevLength = arrOfrecommendations.length;
 
-        for (let method in jsonOfArticles){
+        for (let method in articlesCopied){
 
-            token = giveHead(jsonOfArticles[method]);
+            token = giveHead(articlesCopied[method]);
 
             if(token !== undefined){
                 arrOfrecommendations.push(token.token);
@@ -43,10 +45,10 @@ function recommendations(jsonOfArticles){
     return arrOfrecommendations;
 }
 
+
 console.log(recommendations(json3));
 
 console.log(json3);
-
 
 module.exports = {
     json1,
